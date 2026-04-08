@@ -1,4 +1,1 @@
-wiki/** linguist-vendored
-docs/** linguist-vendored
-*.dll linguist-vendored
-*.zip linguist-vendored
+* linguist-language=C#
