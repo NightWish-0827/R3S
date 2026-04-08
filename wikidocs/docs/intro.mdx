@@ -1,39 +1,75 @@
 ---
 id: intro
-title: UNInject란?
-sidebar_label: UNInject란?
+title: R3S란?
+sidebar_label: R3S란?
 slug: /
 ---
+import BoilerplateComparison from '@site/src/components/BoilerplateComparison';
 
-# UNInject
+# R3S
 
-## Unity + Inject = UNInject 
+R3S는 `R3`를 사용할 때 반복되는 코드를 Roslyn Source Generator로 자동 생성해
+**보일러플레이트를 크게 줄여주는 SDK**입니다.
 
-Unity를 통한 게임 개발에서 가장 높은 사용성과 퍼포먼스를 보장하는 **차세대** **D.I (의존성 주입) 솔루션** 입니다.  
-기존 **D.I 솔루션**들에서 퍼포먼스, 다형성. 그리고 가장 중요한 **사용성**을 보장하기 위해 고안되었습니다.
+핵심은 **매우 간단합니다**.
 
-- **가장 빠른 주입 속도** : **VContainer**와 동일 선상의 **상수 복잡도 O(1) 주입 지원**. (SnapShot, Bake... `Zenject`의 최대 20배) 
+- 필드/메서드에 Attribute를 붙인다.
 
-- **Top Tier GC Alloc** : **Resolve** (Getter) 의 비용을 **자동으로 제거**합니다. **(Editor Time Bake, Roslyn CodeGen)**  
+- Generator가 프로퍼티 노출, 커맨드 실행 메서드, Subscribe 연결 코드를 만든다.
 
-- **엄청난 학습곡선 (Positive)** : **매우. 매우 쉬운 학습 곡선을 자랑합니다.** 따라서 후반 도입이 고려가 가능합니다.
+- 런타임 코드는 **더 짧고 읽기 쉬워진다**.
 
-- **직관적인 패턴 강제** : Unity의 Scene을 보듯, **가장 직관적이고**, **높은 사용성**을 보장합니다. 
+:::danger[잠깐, 알고 가셔야 합니다.]
+`R3S`는 **기본적으로 `R3`를 익힌 프로그래머를 대상**으로 제작되었습니다.  
+`R3`의 **동작 원리**와 **관련 펑션**은 **해당 WIKI에서 다루지 않습니다.**
+:::
+---
 
-- **3 Tier LifeCycle** : 유니티 엔진에서 최적화된, 각 용도에 알맞은 **세 가지 Scope 계층을 강제**합니다.
+## 왜 사용해야 하나요? 
+
+- **압도적인 라인 절약** : **반복적인 래퍼/구독/Dispose 코드를 직접 작성하지 않아도 됩니다.**
+
+- **실수 방지 진단** : `R3Gen001~012` 진단으로 **partial, Awake/OnDestroy 호출 누락 등**을 **컴파일 시점에 잡습니다**.
+
+- **규칙 기반 일관성** : **네이밍과 라이프사이클 규칙이 고정**되어 **팀 코드 품질을 유지하기 쉽습니다**.
 
 ---
 
-## 메인 프레임 설계도
+## 보일러플레이트 절감 비교
 
-import ArchitectureDiagram from '@site/src/components/ArchitectureDiagram';
-
-<ArchitectureDiagram />  
+<BoilerplateComparison />
 
 ---
 
-## 성능 그래프 (Git Storage Critiqued)
+## 핵심
 
-import PerformGraph from '@site/src/components/PerformGraph'; 
+총 **3가지의 명확한 기능**을 제공합니다. 
 
-<PerformGraph /> 
+**1. 코드를 얇게 유지** : 사용자가 작성하는 코드는 `필드 선언` + `어트리뷰트` + `엔트리, 아웃` 총 3가지만 남습니다.  
+  :::note
+  매우 간단하고 얇은 컨베션만 따르면 내부의 모든 기능을 100% 활용할 수 있습니다. 
+  :::
+**2. 명확한 소유권 보장** : **Generaotr**가 생성한 코드와 **사용자 코드**가 충돌할 여지가 존재하지 않습니다.  
+:::tip
+만에 하나, 충돌할 가능성이 발생한 경우에는 ``R3Gen001`` ~ ``012`` 오류가 이를 컴파일 단계에서 감지합니다. 
+:::
+**3. 우상향 효율성** : **코드 규모가 커질수록 격차가 매우 크게 벌어집니다.**  
+:::note
+**필드가 10개인 클래스**라면 **기존 방식**은 **60 ~ 80 라인**, **R3S 방식**은 **20라인 수준**이 됩니다. 
+:::
+
+---
+
+## 지원하는 자동화 범위
+
+:::info
+- `[ReactiveProperty]`
+
+- `[ReactiveCommand]`
+
+- `[Subject]`
+
+- `[AutoSubscribe]`
+
+- `[AutoDispose]`
+:::

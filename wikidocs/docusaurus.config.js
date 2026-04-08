@@ -2,13 +2,13 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'UNInject',           // ← SDK 이름으로 변경
-  tagline: 'NightWish',
+  title: 'R3S',
+  tagline: 'Reactive, Reduced, Roslyn',
   url: 'https://NightWish-0827.github.io',
   baseUrl: '/R3S/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/uninjectlogo.ico',
+  favicon: 'img/r3slogo.png',
 
   // 번역 설정
   i18n: {
@@ -41,20 +41,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'UNInject',             // ← SDK 이름으로 변경
-        // logo 있으면 추가
-        logo: { alt: 'UNInject Logo', src: 'img/uninjectlogo.png' },
+        title: 'R3S',
+        logo: { alt: 'R3S Logo', src: 'img/r3slogo.png' },
         items: [
           /*{
             type: 'localeDropdown',    // 번역 드롭다운
             position: 'right',
           },*/
-          {
-            type: 'doc',
-            docId: 'getting-started/installation',  // Getting Started 이동
-            label: 'Getting Started',
-            position: 'right',
-          },
+          { type: 'doc', docId: 'getting-started/installation', label: 'Getting Started', position: 'right' },
         ],
       },
       colorMode: {

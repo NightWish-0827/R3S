@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: '압도적인 라인 절약',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        반복적인 R3 래퍼/구독/정리 코드를 Source Generator가 자동으로
+        생성하여 보일러플레이트를 크게 줄입니다.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: '컴파일 타임 안전성',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        R3Gen 진단이 partial, Awake/OnDestroy 호출 누락, 타입 불일치 등
+        실수를 빌드 전에 잡아줍니다.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '짧고 읽기 쉬운 코드',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Attribute 중심으로 선언하고 도메인 로직에만 집중할 수 있어
+        팀 전체 유지보수 비용이 내려갑니다.
       </>
     ),
   },
