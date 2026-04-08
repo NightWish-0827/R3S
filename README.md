@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/unity-2021.3%2B-black)
 ![](https://img.shields.io/badge/license-MIT-blue)
-[![Wiki](https://img.shields.io/badge/📖%20Wiki-blue?style=for-the-badge)](https://nightwish-0827.github.io/r3s/)
+[![Wiki](https://img.shields.io/badge/📖%20Wiki-blue?style=for-the-badge)](https://nightwish-0827.github.io/R3S/)
 
 
 > **R3S** turns repetitive **R3 subscription and callback wiring** into **declarative attributes**.  
