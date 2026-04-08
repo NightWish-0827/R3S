@@ -1,5 +1,7 @@
 # R3S – Roslyn-Powered R3 Callback Wiring for Unity
 
+## Current Version : 1.0.0
+
 ![](https://img.shields.io/badge/unity-2021.3%2B-black)
 ![](https://img.shields.io/badge/license-MIT-blue)
 [![Wiki](https://img.shields.io/badge/📖%20Wiki-blue?style=for-the-badge)](https://nightwish-0827.github.io/R3S/)
@@ -10,6 +12,11 @@
 
 This README **does not introduce or teach R3 itself** (streams, operators, or the reactive model).  
 It only documents **how R3 callback patterns change when you use R3S**: *manual wiring* **→** *annotated members + generated glue*.
+
+>**Pcakge Manager -> Add Package from git URL**  
+
+`https://github.com/NightWish-0827/R3S.git?path=/com.nightwishlab.r3s`  
+UPM: Add package from git URL
 
 ---
 
