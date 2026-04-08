@@ -1,0 +1,10 @@
+{
+  "name": "com.nightwishlab.r3s",
+  "version": "1.0.0",
+  "displayName": "R3S",
+  "description": "Eliminate 'R3' boilerplate with 'Roslyn-powered' automation for cleaner, faster, and safer reactive programming.",
+  "unity": "2021.3",
+  "author": {
+    "name": "NightWish"
+  }
+}
