@@ -303,11 +303,3 @@ The analyzer/generator enforces **safe wiring**. Representative rules from the a
 * **Roslyn source generator** delivered with this package (**`Editor/R3Generator.dll`**) — no manual step beyond importing the package
 
 ---
-
-### In a word...
-
-R3S is **not** a reactive framework and **not** an R3 tutorial.
-
-It is a **compiler-assisted rewrite layer**: **your callbacks stay**, and **the wiring around them becomes generated, consistent, and diagnosable** — so R3 code reads like **intent**, not **ceremony**.
-
-**LessSubscribeNoise.MoreSignal.**
